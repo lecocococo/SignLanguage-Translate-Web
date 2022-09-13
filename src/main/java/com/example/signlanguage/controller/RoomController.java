@@ -28,12 +28,14 @@ public class RoomController {
         return mv;
     }
 
+
     //채팅방 개설
     @PostMapping(value = "/room")
     public String create(@RequestParam String name, RedirectAttributes rttr){
 
         rttr.addFlashAttribute("roomName", repository.createChatRoomDTO(name));
-        return "redirect:/chat/rooms";
+//        return "redirect:/chat/rooms";
+        return "redirect:/hospital";
     }
 
     //채팅방 조회

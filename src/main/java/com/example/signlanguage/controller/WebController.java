@@ -1,16 +1,23 @@
 package com.example.signlanguage.controller;
 
+import com.example.signlanguage.chat.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequiredArgsConstructor
 public class WebController {
-
+    private final ChatRoomRepository repository;
     @GetMapping(value = "/hospital")
-    public String hospital(){
-        System.out.println("IN");
-        return "hospital/hospital";
+    public ModelAndView hospital(){
+        System.out.println("Chat Room Created!!!!");
+        ModelAndView mv = new ModelAndView("hospital/hospital");
+
+        mv.addObject("list", repository.findAllRooms());
+
+        return mv;
+//        return "hospital/hospital";
     }
 }
