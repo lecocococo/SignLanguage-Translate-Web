@@ -97,7 +97,7 @@ class App {
         fd.append("file",file);
 
         $.ajax({
-            url:"http://192.168.1.112:5500/",
+            url:"https://58.233.13.150:5500/",
             type:"POST",
             contentType: false,
             processData: false,
