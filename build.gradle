@@ -29,6 +29,12 @@ dependencies {
 	implementation('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 
+	// mongodb
+	implementation 'org.springframework.data:spring-data-mongodb:3.4.2'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-devtools:2.7.3'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.7.3'
+
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'mysql:mysql-connector-java'
