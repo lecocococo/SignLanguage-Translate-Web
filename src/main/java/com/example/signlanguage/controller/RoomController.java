@@ -47,4 +47,12 @@ public class RoomController {
         repository.deleteAll();
         return "Deleted All";
     }
+
+    @GetMapping("/roomtest")
+    public ModelAndView test() {
+
+        ModelAndView mv = new ModelAndView("chat/roomtest");
+        mv.addObject("list", repository.findAll());
+        return mv;
+    }
 }
