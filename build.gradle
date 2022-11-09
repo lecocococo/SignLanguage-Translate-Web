@@ -4,6 +4,14 @@ plugins {
 	id 'java'
 }
 
+plugins {
+	id 'org.ec4j.editorconfig' version '0.0.3'
+
+}
+editorconfig {
+	excludes = ['build']
+}
+
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -34,13 +42,17 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-devtools:2.7.3'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.7.3'
+    implementation 'junit:junit:4.13.1'
 
 
-	compileOnly 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+
+check.dependsOn editorconfigCheck
 
 tasks.named('test') {
 	useJUnitPlatform()

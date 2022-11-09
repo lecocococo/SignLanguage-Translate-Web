@@ -35,6 +35,12 @@ public class RoomController {
         return "redirect:/hospital";
     }
 
+//	// 채팅방 조회
+//	@GetMapping("/roomtest")
+//	public void getRoom(String roomId, Model model) {
+//		ChatRoomDTO room = repository.findById(roomId).get();
+//		model.addAttribute("room", room);
+//	}
     // 채팅방 조회
     @GetMapping("/room")
     public void getRoom(String roomId, Model model) {
@@ -46,13 +52,5 @@ public class RoomController {
     public String deleteAllRooms() {
         repository.deleteAll();
         return "Deleted All";
-    }
-
-    @GetMapping("/roomtest")
-    public ModelAndView test() {
-
-        ModelAndView mv = new ModelAndView("chat/roomtest");
-        mv.addObject("list", repository.findAll());
-        return mv;
     }
 }
